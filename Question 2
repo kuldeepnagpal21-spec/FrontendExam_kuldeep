@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Responsive Navbar</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+}
+header {
+  background: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+nav a:hover {
+  background: blue;
+}
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 28px;
+}
+main {
+  padding: 30px;
+}
+@media(max-width: 600px) {
+  .menu-btn {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #222;
+    gap: 0;
+  }
+  nav.open {
+    display: flex;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">MyShop</div>
+
+  <div class="menu-btn" onclick="toggleMenu()">
+    &#9776;
+  </div>
+
+  <nav id="menu">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Welcome to MyShop</h1>
+  <p>Resize the browser window to see the menu change.</p>
+</main>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu")
+    .classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
